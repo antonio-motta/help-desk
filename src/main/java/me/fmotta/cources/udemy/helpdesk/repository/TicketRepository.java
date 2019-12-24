@@ -26,38 +26,38 @@ public interface TicketRepository extends MongoRepository<Ticket, String> {
 
     /**
      * Busca de ticket pelo status, prioridade e title do usuário ordernado pela data.
-     * @param pages
-     * @param status
-     * @param priority
-     * @param title
+     * @param pages paginação
+     * @param status status
+     * @param priority prioridade
+     * @param title titulo
      * @return tickets
      */
-    Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingOrderByDateDesc(
+    Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityOrderByDateDesc(
             Pageable pages, String status, String priority, String title, String userId);
 
     /**
      * Busca de ticket pelo status, prioridade, title e pelo id do usuário ordernado pela data.
-     * @param pages
-     * @param status
-     * @param priority
-     * @param title
-     * @param userId
+     * @param pages paginação
+     * @param status status
+     * @param priority prioridade
+     * @param title titulo
+     * @param userId id do usuario
      * @return tickets
      */
-    Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingAndUserIdOrderByDateDesc(
+    Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityAndUserIdOrderByDateDesc(
             Pageable pages, String status, String priority, String title, String userId);
 
 
     /**
      * Busca de ticket pelo status, prioridade, title e pelo id do usuário ordernado pela data.
-     * @param pages
-     * @param status
-     * @param priority
-     * @param title
-     * @param AssignedUserId
+     * @param pages paginação
+     * @param status status
+     * @param priority prioridade
+     * @param title titulo
+     * @param AssignedUserId id do usuario responsavél
      * @return tickets
      */
-    Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingAndAssignedUserIdOrderByDateDesc(
+    Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityAndAssignedUserIdOrderByDateDesc(
             Pageable pages, String status, String priority, String title, String AssignedUserId);
 
     /**

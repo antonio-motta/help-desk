@@ -3,6 +3,7 @@ package me.fmotta.cources.udemy.helpdesk.model;
 import me.fmotta.cources.udemy.helpdesk.constants.Priority;
 import me.fmotta.cources.udemy.helpdesk.constants.Status;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -87,7 +88,7 @@ public class Ticket implements Serializable {
     /**
      * Movimentações do chamado
      */
-    @DBRef(lazy = true)
+    @Transient
     private List<ChangeStatus> changes;
 
     public String getId() {
