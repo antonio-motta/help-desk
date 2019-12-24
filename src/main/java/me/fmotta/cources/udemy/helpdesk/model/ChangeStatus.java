@@ -15,7 +15,6 @@ import java.util.Objects;
  * @author Antonio Motta
  * @Copyright (C)2019 - help-desk | MIT License.
  */
-
 @Document
 public class ChangeStatus implements Serializable {
 
